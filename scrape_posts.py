@@ -18,7 +18,7 @@ def main():
 
             pic_urls = []
             for pic in soup.find_all(attrs='gallery-item'):
-                pic_urls.append(pic.find('img').attrs.get('src'))
+                pic_urls.append(pic.find('img').attrs.get('src').split('?')[0])
 
             post_time = soup.find(attrs='entry-date published').get('datetime')
 

@@ -30,7 +30,7 @@ def main():
         post_id = post.get_attribute('id')
         post_url = post.find_element_by_tag_name('a').get_attribute('href')
         post_title = post.find_element_by_tag_name('a').text
-        img_url = post.find_element_by_tag_name('img').get_attribute('src')
+        img_url = post.find_element_by_tag_name('img').get_attribute('src').split('?')[0]
 
         if not db.post_list.find_one({'id': post_id}):
             db.post_list.insert_one({
