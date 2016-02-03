@@ -9,7 +9,7 @@ from tornado.ioloop import IOLoop
 
 app = Flask(__name__)
 
-MONGODB_URI = os.environ.get('MONGODB_URI')
+MONGODB_URI = os.environ.get('MONGO_URL')
 
 @app.route('/posts')
 def post_list():

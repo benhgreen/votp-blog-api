@@ -6,10 +6,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 BASE_SITE_URL = 'http://visionsofthepastblog.com/'
-MONGODB_URI = os.environ.get('MONGODB_URI')
+MONGODB_URI = os.environ.get('MONGO_URL')
 
 def main():
-    browser = webdriver.Firefox()
+    browser = webdriver.PhantomJS()
     db = MongoClient(MONGODB_URI)['votp-db']
 
     browser.get(BASE_SITE_URL)
