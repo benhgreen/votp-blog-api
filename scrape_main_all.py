@@ -10,7 +10,7 @@ MONGODB_URI = os.environ.get('MONGODB_URI')
 
 def main():
     browser = webdriver.Firefox()
-    db = MongoClient(MONGODB_URI)['votp-db-dev']
+    db = MongoClient(MONGODB_URI)['votp-db']
 
     browser.get(BASE_SITE_URL)
     time.sleep(1)
